@@ -15,7 +15,7 @@ class JsonReaderFromFile {
         }
     }
 
-    fun printPersonsFromJson(persons: List<Person>) {
+    private fun printPersonsFromJson(persons: List<Person>) {
         persons.let {
             for (person in persons) {
                 println("My name is ${person.name} and I am ${person.age} years old")
@@ -23,7 +23,7 @@ class JsonReaderFromFile {
         }
     }
 
-    fun mainPersonsFromJson() {
+    fun mainLoadPersonsFromJson() {
         val persons =  readPersonsFromJson(filePath = "data/klaxon/person-data.json")
         persons?.let { this.printPersonsFromJson(it) }
     }
