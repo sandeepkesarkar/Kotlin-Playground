@@ -2,6 +2,7 @@ package klaxonPad
 
 import com.beust.klaxon.Klaxon
 import java.io.File
+import java.io.FileNotFoundException
 
 class JsonReaderFromFile {
     fun readPersonsFromJson(filePath:String): List<Person>? {
@@ -10,7 +11,10 @@ class JsonReaderFromFile {
 
         return try {
             Klaxon().parseArray(File(filePath).readText())
-        } catch (ex:Exception) {
+        } catch (fileEx: FileNotFoundException) {
+            throw fileEx
+        }
+        catch (ex:Exception) {
             throw Exception(ex)
         }
     }
