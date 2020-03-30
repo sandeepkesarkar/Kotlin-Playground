@@ -5,7 +5,7 @@ import com.beust.klaxon.Klaxon
 import java.io.File
 import java.io.StringReader
 
-class JsonReaderFromStream {
+class PersonsJsonReaderFromStream {
     fun readPersonsFromStream(filePath: String): List<Person> {
         if (filePath.isNullOrEmpty())
             throw IllegalArgumentException("filePath can't be null or empty")

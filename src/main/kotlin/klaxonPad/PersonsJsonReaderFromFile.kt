@@ -4,7 +4,7 @@ import com.beust.klaxon.Klaxon
 import java.io.File
 import java.io.FileNotFoundException
 
-class JsonReaderFromFile {
+class PersonsJsonReaderFromFile {
     fun readPersonsFromJson(filePath:String): List<Person>? {
         if (filePath.isNullOrEmpty())
             throw IllegalArgumentException("filePath can't be null or empty")
@@ -17,18 +17,5 @@ class JsonReaderFromFile {
         catch (ex:Exception) {
             throw Exception(ex)
         }
-    }
-
-    private fun printPersonsFromJson(persons: List<Person>) {
-        persons.let {
-            for (person in persons) {
-                println("My name is ${person.name} and I am ${person.age} years old")
-            }
-        }
-    }
-
-    fun mainLoadPersonsFromJson() {
-        val persons =  readPersonsFromJson(filePath = "data/klaxon/person-data.json")
-        persons?.let { this.printPersonsFromJson(it) }
     }
 }
