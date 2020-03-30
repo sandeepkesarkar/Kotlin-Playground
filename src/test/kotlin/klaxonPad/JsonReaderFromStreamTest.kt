@@ -4,11 +4,11 @@ import org.junit.jupiter.api.Test
 import java.io.FileNotFoundException
 import kotlin.test.assertFailsWith
 
-class JsonReaderFromFileTest {
+class JsonReaderFromStreamTest {
     @Test
-    fun `when valid filePath read JSON data from file`() {
-        JsonReaderFromFile().let {
-            var persons = it.readPersonsFromJson(filePath = "data/klaxon/person-data.json")
+    fun `when valid filePath read file from JSON stream`() {
+        JsonReaderFromStream().let {
+            val persons : List<Person> = it.readPersonsFromStream(filePath = "data/klaxon/person-data.json")
             persons.isNullOrEmpty()
         }
     }
@@ -16,8 +16,8 @@ class JsonReaderFromFileTest {
     @Test
     fun `when filePath is empty throw IllegalArgumentException`() {
         assertFailsWith<IllegalArgumentException> {
-            JsonReaderFromFile().let {
-                it.readPersonsFromJson(filePath = "")
+            JsonReaderFromStream().let {
+                it.readPersonsFromStream(filePath = "")
             }
         }
     }
@@ -25,8 +25,8 @@ class JsonReaderFromFileTest {
     @Test
     fun `when not valid filePath throw FileNotFoundException`() {
         assertFailsWith<FileNotFoundException> {
-            JsonReaderFromFile().let {
-                it.readPersonsFromJson(filePath = "data/klaxon/not-a-valid-filePath.json")
+            JsonReaderFromStream().let {
+                it.readPersonsFromStream(filePath = "data/klaxon/not-a-valid-filePath.json")
             }
         }
     }
