@@ -1,4 +1,4 @@
-package klaxonPad
+package klaxonMod
 
 import com.beust.klaxon.Klaxon
 import java.io.File

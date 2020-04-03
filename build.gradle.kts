@@ -7,6 +7,7 @@ version = "1.0-SNAPSHOT"
 val klaxon_version = "5.2"
 val kluent_version = "1.60"
 val junit_version = "5.6.1"
+val krangle_version = "0.11"
 
 repositories {
     mavenCentral()
@@ -18,6 +19,7 @@ dependencies {
     implementation("com.beust:klaxon:${klaxon_version}")
     testImplementation("org.amshove.kluent:kluent:${kluent_version}")
     testImplementation("org.junit.jupiter:junit-jupiter:${junit_version}")
+    compile("de.mpicbg.scicomp:krangl:${krangle_version}")
 }
 
 tasks {

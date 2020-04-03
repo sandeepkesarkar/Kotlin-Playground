@@ -1,4 +1,4 @@
-package klaxonPad
+package klaxonMod
 
 class PersonsPrintList {
     fun printPersonsFromJsonToConsole(persons: List<Person>) {

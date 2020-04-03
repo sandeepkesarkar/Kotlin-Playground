@@ -1,5 +1,5 @@
-import klaxonPad.PersonsJsonReaderFromFile
-import klaxonPad.PersonsPrintList
+import klaxonMod.PersonsJsonReaderFromFile
+import klaxonMod.PersonsPrintList
 
 fun mainLoadPersonsFromJson() {
     PersonsJsonReaderFromFile().readPersonsFromJson(filePath = "data/klaxon/person-data.json").let { persons ->
